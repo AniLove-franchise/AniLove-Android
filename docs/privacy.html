@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy policy — AniLove</title>
+<meta name="description" content="How AniLove handles your data: no developer servers, no analytics, no tracking. AniList for your account, Google Drive (optional) for pictures you choose to send." />
+<link rel="canonical" href="https://anilove-franchise.github.io/AniLove-Android/privacy.html" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23ec4899'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' font-family='Arial' font-weight='900' fill='%2314060d'%3EA%3C/text%3E%3C/svg%3E" />
+<style>
+  :root {
+    --bg: #07080d;
+    --panel: #0f1219;
+    --line: rgba(255, 255, 255, 0.08);
+    --text: #e8ecf4;
+    --muted: #97a1b5;
+    --pink: #f472b6;
+    --green: #34d399;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--pink); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 24px 0; border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; }
+  .dot { width: 26px; height: 26px; border-radius: 9px; background: linear-gradient(135deg, var(--pink), #a855f7); display: inline-flex; align-items: center; justify-content: center; font-size: 14px; color: #14060d; font-weight: 900; }
+  .back { font-size: 14px; font-weight: 600; color: var(--muted); }
+  main { padding: 40px 0 60px; }
+  h1 { font-size: clamp(28px, 5vw, 38px); letter-spacing: -0.03em; margin: 0 0 6px; }
+  .updated { color: #6f7a90; font-size: 13px; margin: 0 0 28px; }
+  h2 { font-size: 18px; letter-spacing: -0.01em; margin: 34px 0 8px; }
+  h3 { font-size: 15px; margin: 20px 0 4px; }
+  p, li { color: var(--muted); font-size: 15px; }
+  strong { color: var(--text); }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  .lead { font-size: 16px; color: #c3cbd9; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0 8px; font-size: 14px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--text); font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+  td { color: var(--muted); }
+  td strong { color: var(--text); }
+  .note { border-left: 3px solid var(--green); background: rgba(52, 211, 153, 0.06); padding: 14px 16px; border-radius: 0 12px 12px 0; margin: 18px 0; font-size: 14.5px; }
+  .warn { border-left: 3px solid var(--pink); background: rgba(244, 114, 182, 0.06); padding: 14px 16px; border-radius: 0 12px 12px 0; margin: 18px 0; font-size: 14.5px; }
+  .note p, .warn p { margin: 0; }
+  footer { padding: 30px 0 50px; border-top: 1px solid var(--line); color: #6f7a90; font-size: 13px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><span class="dot">A</span> AniLove</div>
+    <a class="back" href="index.html">← Back to AniLove</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <h1>Privacy policy</h1>
+    <p class="updated">Last updated 19 November 2026 · applies to AniLove for Android, version 1.3 and later</p>
+
+    <p class="lead">
+      AniLove is an Android client for AniList. It is built and published by one independent developer.
+      <strong>There is no AniLove server.</strong> No account, database, analytics service or crash
+      reporter is operated for this app, and none of your data is sent to the developer.
+    </p>
+
+    <div class="note">
+      <p><strong>The short version.</strong> Your AniList account is handled by AniList. Your pictures are
+      handled by your own Google Drive, encrypted before upload. Everything else lives on your phone.
+      The developer never receives, sees or stores any of it.</p>
+    </div>
+
+    <h2>1. What is stored on your device</h2>
+    <table>
+      <tr><th>Data</th><th>Why</th><th>Where</th></tr>
+      <tr><td><strong>AniList access token</strong></td><td>To call the AniList API as you</td><td>App-private storage, per profile, behind an optional PIN</td></tr>
+      <tr><td><strong>Settings</strong> (theme, playback, notifications, profiles)</td><td>To remember your choices</td><td>App-private storage</td></tr>
+      <tr><td><strong>Chat cache</strong></td><td>So conversations open instantly and work offline</td><td>App-private storage</td></tr>
+      <tr><td><strong>Downloaded episodes</strong></td><td>Offline playback, if you start a download</td><td>App-specific folder on the device</td></tr>
+      <tr><td><strong>Google account email</strong> (optional)</td><td>Only to show which account is connected for picture sending</td><td>App-private storage</td></tr>
+    </table>
+    <p>
+      No contacts, calendars, SMS, call logs, location, camera, microphone, photos library or device
+      identifiers are read. Pictures are picked through Android's own photo picker, which hands the app
+      only the single image you select.
+    </p>
+
+    <h2>2. What goes to AniList</h2>
+    <p>
+      Signing in uses AniList's OAuth page. The app never sees your AniList password. Your token is then
+      used to read and write your lists, activity, notifications and messages — which means AniList
+      receives those requests along with your IP address. AniList stores your messages and profile
+      according to <a href="https://anilist.co/terms" rel="noopener">AniList's own terms and privacy policy</a>.
+      Deleting AniLove does not delete your AniList account or messages; you can revoke the app at
+      <a href="https://anilist.co/settings/apps" rel="noopener">anilist.co/settings/apps</a>.
+    </p>
+
+    <h2>3. What goes to Google (only if you connect Drive)</h2>
+    <p>
+      Sending a picture is optional. If you connect Google Drive, AniLove requests one permission:
+      <strong>access to files the app itself creates</strong> (<code>drive.file</code>). It cannot list,
+      read or modify anything else in your Drive.
+    </p>
+    <ul>
+      <li>Your Google <strong>email address</strong> is read once so the app can show which account is connected.</li>
+      <li>The picture is <strong>encrypted on the phone</strong> before it is uploaded, and the encrypted file is placed in your Drive.</li>
+      <li>The file is marked "anyone with the link can view" so the person you are messaging can download it <em>without</em> a Google account. Because it is encrypted, a link by itself reveals nothing readable.</li>
+      <li>Google never receives the decryption key. AniList does — see section 5.</li>
+    </ul>
+    <p>
+      You can disconnect Drive in the app at any time, delete the files in your Drive like any other file,
+      or revoke access entirely at
+      <a href="https://myaccount.google.com/permissions" rel="noopener">myaccount.google.com/permissions</a>.
+      Google's handling of the file is covered by Google's privacy policy.
+    </p>
+
+    <h2>4. Other services the app contacts</h2>
+    <p>Only when the matching feature is used, and always over HTTPS:</p>
+    <table>
+      <tr><th>Service</th><th>When</th><th>What is sent</th></tr>
+      <tr><td><strong>Tenor</strong></td><td>You open the GIF/sticker picker</td><td>Your search words</td></tr>
+      <tr><td><strong>Jikan</strong> (public MyAnimeList metadata API)</td><td>Anime/manga details, news, schedules</td><td>The title or ID being looked at</td></tr>
+      <tr><td><strong>AniZip, trace.moe</strong></td><td>Episode metadata; the optional scene finder</td><td>The show/season, or the frame you choose to search</td></tr>
+      <tr><td><strong>Anime streaming providers</strong></td><td>You pick a source and press play</td><td>Normal web requests from your device; those providers see your IP and may set their own cookies in the player</td></tr>
+      <tr><td><strong>Image and quote services</strong></td><td>Wallpapers, character art, quotes, news feeds</td><td>Ordinary image/page requests; no account data</td></tr>
+    </table>
+    <p>
+      AniLove does not proxy these requests through any server of its own. What each provider does with
+      your request is governed by that provider's policy. Embedded players are third-party websites shown
+      inside the app; treat them like any website you visit.
+    </p>
+
+    <h2>5. Encryption, in plain language</h2>
+    <div class="warn">
+      <p><strong>What it protects:</strong> Google, link scanners, and anyone who finds the link. They
+      only ever get unreadable bytes.</p>
+      <p><strong>What it does not protect:</strong> AniList and the person you are talking to. The key
+      travels inside the chat message, and AniList stores that message. This is encryption for storage
+      and transport, not end-to-end encryption against the chat service.</p>
+    </div>
+    <p>
+      Pictures are encrypted with AES-256-GCM using a fresh random key per file. The key is placed in the
+      part of the URL after <code>#</code>, which browsers and servers never send anywhere. Before
+      upload, photos are re-encoded, which also removes EXIF metadata such as camera model and GPS
+      coordinates. Animated GIFs are sent as they are.
+    </p>
+
+    <h2>6. What the developer never receives</h2>
+    <ul>
+      <li>No analytics, telemetry, crash reports, advertising IDs or usage statistics.</li>
+      <li>No AniList token, Google token, message, picture or file list.</li>
+      <li>No account of any kind is created for AniLove.</li>
+      <li>Nothing is sold, rented or shared with advertisers — there is nothing to share.</li>
+    </ul>
+
+    <h2>7. Security measures</h2>
+    <ul>
+      <li>All network traffic uses HTTPS; cleartext HTTP is disabled at the Android platform level.</li>
+      <li>Android cloud backup is disabled for the app, so tokens are not copied off the device by backup.</li>
+      <li>Tokens are kept in app-private storage, separated per profile, and never written to logs.</li>
+      <li>The app's WebView cannot read device files, and page scripts cannot reach the native bridge from any origin other than the app itself.</li>
+      <li>Every release is signed with the same certificate; Android refuses to install an update signed by anyone else.</li>
+    </ul>
+    <p>No system is perfect. If you find a security problem, please report it privately through the repository's issue tracker.</p>
+
+    <h2>8. Your controls</h2>
+    <ul>
+      <li><strong>Delete messages</strong> in the app — they are removed on AniList for both sides.</li>
+      <li><strong>Delete pictures</strong> in Google Drive, or disconnect Drive in the app.</li>
+      <li><strong>Revoke AniList access</strong> at anilist.co/settings/apps.</li>
+      <li><strong>Revoke Google access</strong> at myaccount.google.com/permissions.</li>
+      <li><strong>Remove everything local</strong> by clearing the app's storage or uninstalling it.</li>
+    </ul>
+
+    <h2>9. Children</h2>
+    <p>
+      AniLove is not directed at children under 13 and requires an AniList account, which itself has a
+      minimum age. The app does not knowingly collect any personal data from anyone — there is no server
+      to collect it on.
+    </p>
+
+    <h2>10. Changes to this policy</h2>
+    <p>
+      If a future version changes what leaves your device, this page will be updated before that version
+      is released, and the date at the top will change. The app never adds a new third-party service
+      silently.
+    </p>
+
+    <h2>11. Contact</h2>
+    <p>
+      Questions or requests:
+      <a href="https://github.com/AniLove-franchise/AniLove-Android/issues">open an issue in the AniLove repository</a>.
+    </p>
+
+    <p style="margin-top:34px">
+      AniLove is an unofficial client. It is not affiliated with, endorsed by, or sponsored by AniList,
+      Google, Tenor or MyAnimeList.
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><a href="index.html">Home</a> · <a href="https://github.com/AniLove-franchise/AniLove-Android/releases">Releases</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

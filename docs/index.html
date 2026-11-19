@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AniLove — AniList client for Android</title>
+<meta name="description" content="AniLove is an Android client for AniList: tracking, streaming, and Instagram-style DMs with encrypted picture sharing. No AniLove account, no servers, no tracking." />
+<link rel="canonical" href="https://anilove-franchise.github.io/AniLove-Android/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23ec4899'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' font-family='Arial' font-weight='900' fill='%2314060d'%3EA%3C/text%3E%3C/svg%3E" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="AniLove" />
+<meta property="og:title" content="AniLove — AniList client for Android" />
+<meta property="og:description" content="Track anime and manga, stream episodes, and message friends in an Instagram-style inbox that runs on AniList messages. Encrypted picture sharing, no AniLove server." />
+<meta property="og:url" content="https://anilove-franchise.github.io/AniLove-Android/" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="AniLove — AniList client for Android" />
+<meta name="twitter:description" content="An AniList client with an Instagram-style inbox, encrypted pictures and a native player. No AniLove server, no tracking." />
+<!-- If Google Search Console asks for an HTML tag instead of a file, paste it here:
+<meta name="google-site-verification" content="..." />
+-->
+<style>
+  :root {
+    --bg: #07080d;
+    --panel: #0f1219;
+    --panel-2: #141824;
+    --line: rgba(255, 255, 255, 0.08);
+    --text: #e8ecf4;
+    --muted: #97a1b5;
+    --pink: #f472b6;
+    --pink-strong: #ec4899;
+    --green: #34d399;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background:
+      radial-gradient(900px 500px at 15% -10%, rgba(236, 72, 153, 0.16), transparent 55%),
+      radial-gradient(800px 500px at 95% 0%, rgba(56, 189, 248, 0.10), transparent 50%),
+      var(--bg);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--pink); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code { font-size: 0.9em; color: #c3cbd9; word-break: break-all; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 26px 0; border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -0.02em; font-size: 18px; }
+  .dot { width: 26px; height: 26px; border-radius: 9px; background: linear-gradient(135deg, var(--pink), #a855f7); display: inline-flex; align-items: center; justify-content: center; font-size: 14px; color: #14060d; font-weight: 900; }
+  nav a { color: var(--muted); font-size: 14px; font-weight: 600; margin-left: 18px; }
+  nav a:hover { color: var(--text); }
+  .hero { padding: 64px 0 40px; }
+  .tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); background: rgba(52, 211, 153, 0.10); border: 1px solid rgba(52, 211, 153, 0.25); padding: 5px 10px; border-radius: 999px; }
+  h1 { font-size: clamp(34px, 6vw, 54px); line-height: 1.06; letter-spacing: -0.03em; margin: 18px 0 14px; }
+  h1 span { color: var(--pink); }
+  .lede { font-size: 17px; color: var(--muted); max-width: 620px; margin: 0 0 26px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn { display: inline-flex; align-items: center; gap: 9px; padding: 13px 20px; border-radius: 14px; font-weight: 800; font-size: 15px; border: 1px solid transparent; transition: transform 0.12s ease, background 0.12s ease; }
+  .btn:hover { text-decoration: none; transform: translateY(-1px); }
+  .btn-primary { background: var(--pink-strong); color: #1a0710; }
+  .btn-primary:hover { background: var(--pink); }
+  .btn-ghost { background: rgba(255, 255, 255, 0.04); color: var(--text); border-color: var(--line); }
+  .btn-ghost:hover { background: rgba(255, 255, 255, 0.08); }
+  .meta { margin-top: 16px; font-size: 13px; color: #6f7a90; }
+  .meta code { color: var(--muted); }
+  section { padding: 46px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 22px; letter-spacing: -0.02em; margin: 0 0 6px; }
+  .sub { color: var(--muted); margin: 0 0 24px; font-size: 15px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .card { background: linear-gradient(180deg, var(--panel-2), var(--panel)); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+  .card h3 { margin: 0 0 6px; font-size: 15px; }
+  .card p { margin: 0; font-size: 14px; color: var(--muted); }
+  .icon { font-size: 18px; margin-bottom: 10px; display: block; }
+  ol.steps { counter-reset: s; list-style: none; padding: 0; margin: 0; }
+  ol.steps li { counter-increment: s; position: relative; padding-left: 44px; margin-bottom: 16px; color: var(--muted); font-size: 14.5px; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 28px; height: 28px; border-radius: 9px; background: rgba(244, 114, 182, 0.12); border: 1px solid rgba(244, 114, 182, 0.3); color: var(--pink); font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+  ol.steps strong { color: var(--text); }
+  .note { border-left: 3px solid var(--pink); background: rgba(244, 114, 182, 0.06); padding: 14px 16px; border-radius: 0 12px 12px 0; font-size: 14px; color: var(--muted); }
+  .note strong { color: var(--text); }
+  footer { padding: 34px 0 54px; border-top: 1px solid var(--line); color: #6f7a90; font-size: 13px; }
+  footer a { color: var(--muted); }
+  footer p { margin: 6px 0; }
+  @media (max-width: 520px) {
+    nav a { margin-left: 12px; font-size: 13px; }
+    .hero { padding: 44px 0 30px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><span class="dot">A</span> AniLove</div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#install">Install</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <span class="tag">Android · Free · No AniLove account</span>
+    <h1>AniList, <span>without the app store.</span></h1>
+    <p class="lede">
+      AniLove is an Android client for AniList: track what you watch, stream episodes from your own
+      sources, and message friends in an Instagram-style inbox that runs on AniList messages.
+      There is no AniLove server — the app talks straight to AniList.
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/AniLove-franchise/AniLove-Android/releases/latest/download/AniLove.apk">
+        ⬇ Download the APK
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/AniLove-franchise/AniLove-Android/releases">All releases</a>
+    </div>
+    <p class="meta">
+      Android 7.0 or newer · about 13 MB · signed with the same key since v1.3 ·
+      SHA-256 published in every release
+    </p>
+  </div>
+
+  <section id="features">
+    <div class="wrap">
+      <h2>What it does</h2>
+      <p class="sub">Everything talks to the services you already have. Nothing talks to us.</p>
+      <div class="grid">
+        <div class="card">
+          <span class="icon">📚</span>
+          <h3>Track anime &amp; manga</h3>
+          <p>Your AniList lists, scores, progress and activity, with seasonal charts, schedules and search.</p>
+        </div>
+        <div class="card">
+          <span class="icon">▶️</span>
+          <h3>Watch episodes</h3>
+          <p>Play from your own sources in a native player, with subtitles, gestures, picture-in-picture and downloads.</p>
+        </div>
+        <div class="card">
+          <span class="icon">💬</span>
+          <h3>DMs that run on AniList</h3>
+          <p>An Instagram-style inbox, replies, reactions, seen marks and editing — all stored as AniList messages.</p>
+        </div>
+        <div class="card">
+          <span class="icon">🖼️</span>
+          <h3>Encrypted pictures</h3>
+          <p>Send photos through your own Google Drive, encrypted on the phone. The receiver needs no Google account.</p>
+        </div>
+        <div class="card">
+          <span class="icon">🎞️</span>
+          <h3>GIFs &amp; stickers</h3>
+          <p>Search Tenor and send a GIF in one tap. The link that gets sent is what AniList stores.</p>
+        </div>
+        <div class="card">
+          <span class="icon">🔐</span>
+          <h3>Per-profile sessions</h3>
+          <p>Keep more than one AniList account on the device, each behind an optional PIN, with the tokens kept apart.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="wrap">
+      <h2>Installing</h2>
+      <p class="sub">Sideloaded on purpose: no Play Store account, no store review, no store services.</p>
+      <ol class="steps">
+        <li><strong>Download the APK</strong> with the button above. It always points at the newest release.</li>
+        <li><strong>Allow installs from this source.</strong> Android will ask once; approve it for your browser or file manager.</li>
+        <li><strong>Open AniLove and sign in with AniList.</strong> Sign-in happens on AniList's own page, then comes back to the app.</li>
+        <li><strong>Optional:</strong> connect Google Drive if you want to send pictures. Only the sender needs it.</li>
+      </ol>
+      <div class="note">
+        <strong>Updates keep your data.</strong> Every release is signed with the same certificate, so new
+        versions install straight over the old one. If Android refuses an update, the APK came from
+        somewhere else — delete it and download again from this page.
+      </div>
+    </div>
+  </section>
+
+  <section id="verify">
+    <div class="wrap">
+      <h2>Verify the download</h2>
+      <p class="sub">
+        Every release lists the APK's SHA-256 in its notes; compare it with
+        <code>certutil -hashfile AniLove.apk SHA256</code>. To check the signer with the Android SDK:
+        <code>apksigner verify --print-certs AniLove.apk</code>. The certificate SHA-256 is always
+        <code>E3:04:A1:D5:2A:6D:27:29:FF:A0:4B:2F:6A:F7:7B:84:3E:CA:C9:99:10:23:A6:E1:99:AE:57:9C:CD:48:00:24</code>.
+        If either value differs, do not install the file.
+      </p>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap">
+      <h2>Privacy in one paragraph</h2>
+      <p class="sub">
+        The developer operates no server, no database and no analytics. Your AniList token never leaves
+        the device except to AniList itself. Shared pictures are encrypted with AES-256-GCM before they
+        are uploaded, and the key travels inside the chat message — which means AniList, and the person
+        you are talking to, can read it. That is the honest limit.
+      </p>
+      <p class="sub" style="margin-bottom:0">
+        Full details: <a href="privacy.html">Privacy policy</a>.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>AniLove</strong> is an unofficial client. Not affiliated with AniList, Google, Tenor or MyAnimeList.</p>
+    <p>Pictures are stored in your own Google Drive when you send them. AniLove has no access to that account.</p>
+    <p><a href="privacy.html">Privacy policy</a> · <a href="https://github.com/AniLove-franchise/AniLove-Android/releases">All releases</a> · <a href="https://github.com/AniLove-franchise/AniLove-Android/issues">Report a problem</a></p>
+    <p>© 2026 AniLove</p>
+  </div>
+</footer>
+
+</body>
+</html>

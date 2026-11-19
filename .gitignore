@@ -1,0 +1,14 @@
+# Local-only files for this release repository.
+# Never commit build output or signing material here.
+*.apk
+*.aab
+*.jks
+*.keystore
+keystore.properties
+.env
+.env.*
+tools/
+DEPLOY.md
+version.json
+*.sha256
+RELEASE_NOTES-*.md
