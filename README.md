@@ -10,11 +10,13 @@ Android 7.0+ · about 13 MB · free · no ads · no analytics · no AniLove serv
 
 ## What this repository is
 
-This repository hosts **release builds only**: the signed APK, its checksum and release notes.
+This repository hosts the signed APK, its checksum, release notes and the public site pages.
 There is no source code here.
 
 - **Download** from [Releases](https://github.com/AniLove-franchise/AniLove-Android/releases).
-- **Report a problem** in [Issues](https://github.com/AniLove-franchise/AniLove-Android/issues).
+- **Report a bug** in [Issues](https://github.com/AniLove-franchise/AniLove-Android/issues).
+- **Report a security problem privately** — see [SECURITY.md](SECURITY.md). Never post tokens,
+  messages or picture links in a public issue.
 - **Read about your data** in the [privacy policy](https://anilove-franchise.github.io/AniLove-Android/privacy.html).
 
 Every release is built from the same codebase and signed with the same certificate, so a new
@@ -230,9 +232,10 @@ Open an [issue](https://github.com/AniLove-franchise/AniLove-Android/issues) and
 - what you expected and what happened;
 - steps that reproduce it, if you know them.
 
-For anything security-related, please describe the problem without posting tokens, email
-addresses, private messages or picture links. Revoke the affected access first if a credential
-may have leaked.
+For anything security-related, please use the private report described in
+[SECURITY.md](SECURITY.md) instead of a public issue. Never post tokens, email addresses,
+private messages or picture links publicly. Revoke the affected access first if a credential may
+have leaked.
 
 ## Disclaimer
 
