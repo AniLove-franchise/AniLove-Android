@@ -183,7 +183,8 @@ The certificate SHA-256 must always be:
 E3:04:A1:D5:2A:6D:27:29:FF:A0:4B:2F:6A:F7:7B:84:3E:CA:C9:99:10:23:A6:E1:99:AE:57:9C:CD:48:00:24
 ```
 
-If either value differs, do not install the file.
+If either value differs, do not install the file. A certificate fingerprint is public by design:
+it can verify a build, but it cannot be used to sign one.
 
 ## FAQ
 
