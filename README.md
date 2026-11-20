@@ -34,9 +34,15 @@ AniLove is a full AniList client, not a companion app:
 - **Pictures in chat** — photos and GIFs are encrypted on the phone and sent through your own
   Google Drive. The person receiving them needs no Google account and no extra app beyond
   AniLove.
-- **GIFs and stickers** — Tenor search, one tap to send.
+- **GIFs and stickers** — Tenor search, one tap to send. Stickers are rendered without a chat
+  bubble so transparent artwork stays transparent.
 - **Episode streaming** — play from the sources you choose, in a native player with subtitles,
   gestures, picture-in-picture and offline downloads.
+- **Fan Arts** — a searchable, full-screen gallery of character artwork with favourites and
+  save-to-phone.
+- **Schedule** — this week's airing times, episode numbers and an upcoming view.
+- **Watch Order** — a release-order timeline for long franchises, split into main story, movies,
+  specials and OVAs, with progress and direct episode links.
 - **Discover** — character art, wallpapers, quotes and anime news from public providers.
 - **Several accounts** — keep more than one AniList profile on the device, separated behind an
   optional PIN, each with its own token.

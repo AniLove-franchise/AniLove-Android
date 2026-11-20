@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>AniLove — AniList client for Android</title>
-<meta name="description" content="AniLove is an Android client for AniList: tracking, streaming, and Instagram-style DMs with encrypted picture sharing. No AniLove account, no servers, no tracking." />
+<meta name="description" content="AniLove is an Android client for AniList: tracking, streaming, fan art, schedules, watch-order timelines and Instagram-style DMs with encrypted picture sharing. No AniLove account, no servers, no tracking." />
 <link rel="canonical" href="https://anilove-franchise.github.io/AniLove-Android/" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23ec4899'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' font-family='Arial' font-weight='900' fill='%2314060d'%3EA%3C/text%3E%3C/svg%3E" />
 <meta property="og:type" content="website" />
@@ -75,6 +75,12 @@
   .card { background: linear-gradient(180deg, var(--panel-2), var(--panel)); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
   .card h3 { margin: 0 0 6px; font-size: 15px; }
   .card p { margin: 0; font-size: 14px; color: var(--muted); }
+  .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+  .shot { background: linear-gradient(180deg, var(--panel-2), var(--panel)); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+  .shot img { display: block; width: 100%; height: auto; background: #05060a; }
+  .shot-body { padding: 16px 18px 18px; }
+  .shot h3 { margin: 0 0 5px; font-size: 16px; }
+  .shot p { margin: 0; font-size: 13.5px; color: var(--muted); }
   .icon { font-size: 18px; margin-bottom: 10px; display: block; }
   ol.steps { counter-reset: s; list-style: none; padding: 0; margin: 0; }
   ol.steps li { counter-increment: s; position: relative; padding-left: 44px; margin-bottom: 16px; color: var(--muted); font-size: 14.5px; }
@@ -98,6 +104,7 @@
     <div class="brand"><span class="dot">A</span> AniLove</div>
     <nav>
       <a href="#features">Features</a>
+      <a href="#discover">Discover</a>
       <a href="#install">Install</a>
       <a href="privacy.html">Privacy</a>
     </nav>
@@ -160,6 +167,45 @@
           <h3>Per-profile sessions</h3>
           <p>Keep more than one AniList account on the device, each behind an optional PIN, with the tokens kept apart.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="discover">
+    <div class="wrap">
+      <h2>More than a watchlist</h2>
+      <p class="sub">Three pages built for browsing, not just ticking episodes off a list.</p>
+      <div class="shots">
+        <article class="shot">
+          <img src="assets/fan-arts.jpg" alt="AniLove Fan Arts gallery showing Jujutsu Kaisen character artwork" loading="lazy" />
+          <div class="shot-body">
+            <h3>Fan Arts</h3>
+            <p>
+              A full-screen gallery of high-resolution anime artwork. Search by character or series,
+              favourite the pieces you like, and save an image straight to your phone.
+            </p>
+          </div>
+        </article>
+        <article class="shot">
+          <img src="assets/schedule.jpg" alt="AniLove weekly anime schedule with air times and episode numbers" loading="lazy" />
+          <div class="shot-body">
+            <h3>Schedule</h3>
+            <p>
+              See what airs today and through the week, with episode numbers and local air times.
+              Switch between the current week and upcoming releases without leaving the page.
+            </p>
+          </div>
+        </article>
+        <article class="shot">
+          <img src="assets/watch-order.jpg" alt="AniLove Watch Order timeline for the Fate series" loading="lazy" />
+          <div class="shot-body">
+            <h3>Watch Order</h3>
+            <p>
+              Long franchises get a clear timeline: release order, main story, movies, specials and
+              OVAs, with progress, episode counts and a jump straight into episode one.
+            </p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
